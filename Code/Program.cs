@@ -3,7 +3,8 @@
 class Program{
   static void Main(string[] args){    
     // ReversePrintx10();
-    StudentHeight();
+    // StudentHeight();
+    EvenArray();
   }
 
   //ArrayDemo_ReversePrintx10--------------------------------------
@@ -45,4 +46,22 @@ class Program{
     Console.WriteLine("Goodbye");
   }
   //StudentHeight-END----------------------------------------------
+
+  //EvenArray------------------------------------------------------ 
+  static void EvenArray(){
+    int size = int.Parse(Console.ReadLine());
+    int[] num = new int[size];
+
+    for(int i = 0; i < num.Count(); i++){
+      Console.Write("number {0}: ", i+1);
+      num[i] = int.Parse(Console.ReadLine());
+    }
+
+    for(int i = 0; i < num.Count(); i++){
+      if(num[i] % 2 == 0){
+        Console.WriteLine(num[i]);
+      }
+    }
+  }
+  //EvenArray-END--------------------------------------------------
 }

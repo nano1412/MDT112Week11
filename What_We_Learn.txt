@@ -1,0 +1,4 @@
+Array
+int[] num = new int["size"]{set value1,set value2};
+
+num.count();
