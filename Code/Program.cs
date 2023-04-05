@@ -70,7 +70,6 @@ class Program{
   static void SortArray(){
     int size = int.Parse(Console.ReadLine());
     int[] num = new int[size];
-    int[] output = new int[size];
 
     for(int i = 0; i < num.Count(); i++){
       Console.Write("number {0}: ", i+1);
@@ -81,19 +80,15 @@ class Program{
     for(;size >=0; size--){
       for(int i = 1; i < num.Count(); i++){
         if(num[i] > num[i-1]){
-          output[i] = num[i-1];
-          output[i-1] = num[i];
-          num[i] = output [i];
-          num[i-1] = output [i-1];
-        } else {
-          output[i - 1] = num[i - 1];
-          output[i] = num[i];
+          int x = num[i-1];
+          num[i-1] = num[i];
+          num[i] = x;
         }
       }
     }
     
-    for(int i = 0; i < output.Count();i++){
-      Console.WriteLine(output[i]);
+    for(int i = 0; i < num.Count();i++){
+      Console.WriteLine(num[i]);
     }
   }
   //SortArray-END--------------------------------------------------
