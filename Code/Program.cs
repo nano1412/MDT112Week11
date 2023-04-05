@@ -30,12 +30,19 @@ class Program{
       studentHeightcm[i] = double.Parse(Console.ReadLine());
     }
 
-    // ask for which student user want to know
-    Console.Write("student number: ");
-    int wantedstudent = int.Parse(Console.ReadLine());
+    // loop output
+    for(;1 == 1;){
+      Console.Write("student number: ");
+      int wantedstudent = int.Parse(Console.ReadLine());
 
-    // output
-    Console.WriteLine("student No.{0} height = {1} cm", wantedstudent, studentHeightcm[wantedstudent - 1]);
+      if(wantedstudent >=1 && wantedstudent <=15){
+        Console.WriteLine("student No.{0} height = {1} cm", wantedstudent, studentHeightcm[wantedstudent - 1]);
+      } else {
+        break;
+      }
+
+    }
+    Console.WriteLine("Goodbye");
   }
   //StudentHeight-END----------------------------------------------
 }
