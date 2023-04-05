@@ -4,7 +4,8 @@ class Program{
   static void Main(string[] args){    
     // ReversePrintx10();
     // StudentHeight();
-    EvenArray();
+    // EvenArray();
+    SortArray();
   }
 
   //ArrayDemo_ReversePrintx10--------------------------------------
@@ -64,4 +65,37 @@ class Program{
     }
   }
   //EvenArray-END--------------------------------------------------
+
+  //SortArray------------------------------------------------------
+  static void SortArray(){
+    int size = int.Parse(Console.ReadLine());
+    int[] num = new int[size];
+    int[] output = new int[size];
+
+    for(int i = 0; i < num.Count(); i++){
+      Console.Write("number {0}: ", i+1);
+      num[i] = int.Parse(Console.ReadLine());
+    }
+
+    // bubble sort
+    for(;size >=0; size--){
+      for(int i = 1; i < num.Count(); i++){
+        if(num[i] > num[i-1]){
+          output[i] = num[i-1];
+          output[i-1] = num[i];
+          num[i] = output [i];
+          num[i-1] = output [i-1];
+        } else {
+          output[i - 1] = num[i - 1];
+          output[i] = num[i];
+        }
+      }
+    }
+    
+    for(int i = 0; i < output.Count();i++){
+      Console.WriteLine(output[i]);
+    }
+  }
+  //SortArray-END--------------------------------------------------
+
 }
